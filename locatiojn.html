@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Share your location</title>
+</head>
+<body>
+<h2>Requesting your location...</h2>
+<script>
+navigator.geolocation.getCurrentPosition(function(pos) {
+    fetch("https://yourapi.com/location", { // ⬅ Change this to your API URL
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude
+        })
+    }).then(() => {
+        document.body.innerHTML = "<h3>✅ Location sent successfully</h3>";
+    }).catch(() => {
+        document.body.innerHTML = "<h3>❌ Failed to send location</h3>";
+    });
+});
+</script>
+</body>
+</html>
