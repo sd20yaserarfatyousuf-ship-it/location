@@ -8,7 +8,7 @@
 <h2>Requesting your location...</h2>
 <script>
 navigator.geolocation.getCurrentPosition(function(pos) {
-    fetch("https://yourapi.com/location", { // ⬅ Change this to your API URL
+    fetch("http://127.0.0.1:5000/get-location", { // ⬅ Change this to your API URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -24,3 +24,4 @@ navigator.geolocation.getCurrentPosition(function(pos) {
 </script>
 </body>
 </html>
+
