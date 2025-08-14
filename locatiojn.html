@@ -8,7 +8,7 @@
 <h2>Requesting your location...</h2>
 <script>
 navigator.geolocation.getCurrentPosition(function(pos) {
-    fetch("http://127.0.0.1:5000/location", { // ⬅ Change this to your API URL
+    fetch("https://location-99d9.onrender.com/location", { // ⬅ Change this to your API URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -24,5 +24,6 @@ navigator.geolocation.getCurrentPosition(function(pos) {
 </script>
 </body>
 </html>
+
 
 
