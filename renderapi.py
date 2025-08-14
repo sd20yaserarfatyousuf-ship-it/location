@@ -7,7 +7,7 @@ app = FastAPI()
 # 🔁 Replace these with your actual GitHub Pages origins
 # e.g. https://arfat.github.io and/or https://arfat.github.io/location-capture
 origins = [
-    "https://sd20yaserarfatyousuf-ship-it.github.io/location/locatiojn.html",
+    "https://sd20yaserarfatyousuf-ship-it.github.io",
     "https://sd20yaserarfatyousuf-ship-it.github.io/location"
 ]
 
@@ -35,4 +35,5 @@ async def receive_location(req: Request):
 @app.get("/get-location")
 async def get_location():
     return latest_location
+
 
